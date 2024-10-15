@@ -1,0 +1,29 @@
+<template>
+    <c-filter-component location={filteredProperties} >
+    </c-filter-component>
+    <lightning-layout multiple-rows="true">
+        <template for:each={filteredProperties} for:item="house">
+            <lightning-layout-item style="padding:2px;" key={house.Id} size="6">
+                    <div style="background-color:rgb(255, 255, 255); border: 1px solid black; display:flex; flex-direction:row; justify-content:space-around">
+                        <img src={house.Image__c} alt="image" style="width: 160px; height: 180px; border: 1px solid black">
+                        <div style="width: 100%;">
+                            <div style="width: 90%; height: 150px; border: 1px solid rgb(36, 36, 36) ">
+                                <div style="padding-left: 5px">
+                                    <h1 style="font-weight: bold;" >{house.Name}</h1> <br>
+                                    <p><span style="font-weight:bold">Price : </span>{house.Price__c}</p>
+                                    <p><span style="font-weight:bold">No of Bed Rooms : </span>{house.Bed_Room__c}</p>  
+                                    <p><span style="font-weight:bold">No of Bath Rooms : </span>{house.Bath_Room__c}</p>
+                                    <p><span style="font-weight:bold">Location : </span>{house.Location__c}</p>
+                                </div>
+                            </div>
+                            <div style="margin: top 1rem;">
+                                <lightning-button label="Owner Details" variant="success" class="slds-m-left_x-small"></lightning-button>
+                                <lightning-button label="Enquiry" variant="success" class="slds-m-left_x-small"></lightning-button>
+                                <lightning-button label="Property Details" variant="success" class="slds-m-left_x-small"></lightning-button>
+                            </div>
+                        </div>
+                    </div>
+            </lightning-layout-item>
+        </template>
+    </lightning-layout>
+</template>
